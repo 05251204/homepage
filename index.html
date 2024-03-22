@@ -4,9 +4,28 @@
     <title>My Awesome Webpage</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="./md5.js"></script>
+    <script type="text/javascript">
+        function onButtonClick() {
+            const str_input = document.forms.id_form_input.id_textBox.value;
+            // original string
+            const target = document.getElementById("str_input");
+            target.innerText = str_input;
+            // md5
+            const target_md5 = document.getElementById("str_md5");
+            target_md5.innerText = CybozuLabs.MD5.calc(str_input);
+            // md5 utf16
+            const target_md5_utf16 = document.getElementById("str_md5_utf16");
+            target_md5_utf16.innerText = CybozuLabs.MD5.calc(str_input, CybozuLabs.MD5.BY_UTF16);
+        }
+    </script>
   </head>
+
   <body>
+    <div class="main">
+      <div class="h1">coutwnNendl;</div>
+    </div>
     <header>
       <nav>
         <ul>
@@ -16,8 +35,8 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <h1>Welcome to My Awesome Webpage</h1>
+    <div class="main">
+      <h1>Welcome to My wesome Wege</h1>
       <section id="about">
         <h2>About Us</h2>
         <p>Here is some information about my company and what we do.</p>
@@ -43,9 +62,27 @@
           <input type="submit" value="Submit">
         </form>
       </section>
-    </main>
+    </div>
     <footer>
-      <p>Copyright © 2023 My Awesome Company</p>
+      hog
     </footer>
+    <h1>JavaScriptでmd5ハッシュ値の計算</h1>
+    <form name="form_input" id="id_form_input" action="">
+        <input type="text" name="textBox" id="id_textBox" value="" size="50" />
+        <input type="button" value="GET MD5" onclick="onButtonClick();" />
+    </form>
+    <hr />
+    <h2>元の文字列</h2>
+    <div id="str_input"></div>
+    <hr />
+    <h2>ASCII文字のmd5ハッシュ値</h2>
+    <div id="str_md5"></div>
+    <hr />
+    <h2>マルチバイト文字（漢字など）のmd5ハッシュ値</h2>
+    <div id="str_md5_utf16"></div>
+    <hr />
+    <h3>参考</h3>
+    <p><a href="https://labs.cybozu.co.jp/blog/mitsunari/2007/07/md5js_1.html" target="_blank">md5.js (mitsunari@cybozu labs)</a></p>
+    #2958b361150f7ce3182cc08826b57f90 ->Lize0525
   </body>
 </html>
